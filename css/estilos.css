@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    -ms-overflow-style: hidden;
+    scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #f2f2f2;
+}
+
+.contenedor {
+    width: 70%;
+    background: #fff;
+    box-shadow: 0 0 5px 5px rgba(148, 158, 179, 0.2);
+    margin: 20px auto;
+    padding: 30px;
+}
+
+.file-selector input[type="file"] {
+    display: none;
+}
+
+.file-selector label {
+    width: 400px;
+    height: 40px;
+    margin: 10px auto;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    justify-content: center;
+    border-radius: 5px;
+    transition: all ease .3s;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    -webkit-transition: all ease .3s;
+    -moz-transition: all ease .3s;
+    -ms-transition: all ease .3s;
+    -o-transition: all ease .3s;
+}
+
+.file-selector label:hover {
+    background: rgba(00, 00, 122, .8);
+}
+
+.file-selector label::after {
+    content: "";
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    border-radius: 50%;
+    background: #2312ff;
+    transition: all ease .6s;
+    position: absolute;
+    z-index: 1;
+}
+
+.file-selector label:hover::after {
+    transform: scale(300);
+    opacity: 1;
+}
+
+.file-selector label span {
+    z-index: 2;
+    position: absolute;
+    transition: all ease-in-out .6s;
+}
+
+.file-selector label:hover span {
+    transform: translateX(-100px);
+    color: #fff;
+    -webkit-transform: translateX(-100px);
+    -moz-transform: translateX(-100px);
+    -ms-transform: translateX(-100px);
+    -o-transform: translateX(-100px);
+}
+
+.file-selector label i {
+    z-index: 2;
+    position: absolute;
+    left: -40px;
+    opacity: 0;
+    transition: all ease-in-out .6s;
+}
+
+.file-selector label:hover i {
+    left: calc(100% - 40px);
+    opacity: 1;
+    color: #fff;
+}
+
+.img-content {
+    width: 100%;
+    padding: 10px;
+}
+
+.img-content img {
+    width: 100%;
+}
+
+.img-content img::after {
+    display: none;
+}
+
+.img-content img::before {
+    display: none;
+}
+
+@media screen and (max-width: 640px) {
+    .file-selector label {
+        width: 300px;
+    }
+    .file-selector label:hover span {
+        transform: translateX(-50px);
+        -webkit-transform: translateX(-50px);
+        -moz-transform: translateX(-50px);
+        -ms-transform: translateX(-50px);
+        -o-transform: translateX(-50px);
+    }
+}
