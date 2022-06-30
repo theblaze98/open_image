@@ -21,7 +21,8 @@ body {
 }
 
 .contenedor {
-    width: 70%;
+    width: 90%;
+    max-width: 1280px;
     background: #fff;
     box-shadow: 0 0 5px 5px rgba(148, 158, 179, 0.2);
     margin: 20px auto;
@@ -33,9 +34,10 @@ body {
 }
 
 .file-selector label {
-    width: 400px;
-    height: 40px;
+    width: 100%;
+    max-width: 400px;
     margin: 10px auto;
+    height: 40px;
     padding: 20px;
     display: flex;
     align-items: center;
@@ -60,26 +62,8 @@ body {
     background: rgba(00, 00, 122, .8);
 }
 
-.file-selector label::after {
-    content: "";
-    width: 1px;
-    height: 1px;
-    opacity: 0;
-    border-radius: 50%;
-    background: #2312ff;
-    transition: all ease .6s;
-    position: absolute;
-    z-index: 1;
-}
-
-.file-selector label:hover::after {
-    transform: scale(300);
-    opacity: 1;
-}
-
 .file-selector label span {
     z-index: 2;
-    position: absolute;
     transition: all ease-in-out .6s;
 }
 
@@ -101,9 +85,13 @@ body {
 }
 
 .file-selector label:hover i {
-    left: calc(100% - 40px);
+    transform: translateX(400px);
     opacity: 1;
     color: #fff;
+    -webkit-transform: translateX(400px);
+    -moz-transform: translateX(400px);
+    -ms-transform: translateX(400px);
+    -o-transform: translateX(400px);
 }
 
 .img-content {
@@ -134,4 +122,11 @@ body {
         -ms-transform: translateX(-50px);
         -o-transform: translateX(-50px);
     }
+    .file-selector label:hover i {
+        transform: translateX(200px);
+        -webkit-transform: translateX(300px);
+        -moz-transform: translateX(200px);
+        -ms-transform: translateX(200px);
+        -o-transform: translateX(200px);
+}
 }
